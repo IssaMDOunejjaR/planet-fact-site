@@ -31,26 +31,35 @@ export default function Content({ name }: { name: string }) {
 		<>
 			<Tabs>
 				<Tab
-					active={overview === 'overview'}
-					//@ts-ignore
-					name={name.toLowerCase()}
 					onClick={() => setOverview('overview')}
+					//@ts-ignore
+					css={
+						overview === 'overview' ? {
+							borderBottom: '4px solid $' + name.toLowerCase()
+						} : null
+					}
 				>
 					Overview
 				</Tab>
 				<Tab
-					active={overview === 'structure'}
 					onClick={() => setOverview('structure')}
 					//@ts-ignore
-					name={name.toLowerCase()}
+					css={
+						overview === 'structure' ? {
+							borderBottom: '4px solid $' + name.toLowerCase()
+						} : null
+					}
 				>
 					Structure
 				</Tab>
 				<Tab
-					active={overview === 'geology'}
 					onClick={() => setOverview('geology')}
 					//@ts-ignore
-					name={name.toLowerCase()}
+					css={
+						overview === 'geology' ? {
+							borderBottom: '4px solid $' + name.toLowerCase()
+						} : null
+					}
 				>
 					Surface
 				</Tab>
@@ -69,6 +78,7 @@ export default function Content({ name }: { name: string }) {
 							alt={contentData.name}
 							layout="fill"
 							className="image"
+							priority
 						/>
 						<Image
 							src={contentData.images.geology}

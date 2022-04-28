@@ -17,14 +17,18 @@ const NavLink = ({
 	return (
 		<Item
 			//@ts-ignore
-			name={name.toLowerCase()}
-			//@ts-ignore
 			css={
 				('/' + name.toLowerCase()) === pathname ? 
 				{
-					borderTop: '4px solid $' + name.toLowerCase()
+					'@md': {
+						borderTop: '4px solid $' + name.toLowerCase()
+					},
 				}
-				: null
+				: {
+					'a::before': {
+						background: '$' + name.toLowerCase()
+					}
+				}
 			}
 		>
 			<Link href={'/' + name.toLowerCase()}>

@@ -17,72 +17,6 @@ export const Tab = styled('li', {
 	textTransform: 'uppercase',
 	fontWeight: 'bold',
 	cursor: 'pointer',
-
-	variants: {
-		active: {
-			true: {
-				borderBottom: '4px solid transparent',
-			},
-		},
-		name: {
-			mercury: {
-				borderColor: '$mercury',
-
-				a: {
-					'&::before': { backgroundColor: '$mercury' },
-				},
-			},
-			venus: {
-				borderColor: '$venus',
-
-				a: {
-					'&::before': { backgroundColor: '$venus' },
-				},
-			},
-			earth: {
-				borderColor: '$earth',
-
-				a: {
-					'&::before': { backgroundColor: '$earth' },
-				},
-			},
-			mars: {
-				borderColor: '$mars',
-
-				a: {
-					'&::before': { backgroundColor: '$mars' },
-				},
-			},
-			jupiter: {
-				borderColor: '$jupiter',
-
-				a: {
-					'&::before': { backgroundColor: '$jupiter' },
-				},
-			},
-			saturn: {
-				borderColor: '$saturn',
-
-				a: {
-					'&::before': { backgroundColor: '$saturn' },
-				},
-			},
-			uranus: {
-				borderColor: '$uranus',
-
-				a: {
-					'&::before': { backgroundColor: '$uranus' },
-				},
-			},
-			neptune: {
-				borderColor: '$neptune',
-
-				a: {
-					'&::before': { backgroundColor: '$neptune' },
-				},
-			},
-		},
-	},
 });
 
 export const Container = styled('div', {
@@ -143,6 +77,18 @@ export const Picture = styled('div', {
 		top: 210,
 	},
 
+	'@sm': {
+		marginBottom: 0,
+		
+		'.image': {
+			width: '200px !important'
+		},
+		'span:last-of-type': {
+			width: '90px !important',
+			top: 100,
+		},
+	},
+
 	'@lg': {
 		width: '60%',
 	},
@@ -186,8 +132,9 @@ export const Description = styled('p', {
 	textAlign: 'center',
 	fontSize: 16,
 	color: '$grey',
-	padding: '20px 0',
+	padding: '20px 0 0',
 	width: '80%',
+	minHeight: 200,
 
 	'@md': {
 		textAlign: 'start',
@@ -196,7 +143,7 @@ export const Description = styled('p', {
 });
 
 export const Source = styled('div', {
-	padding: '20px 0',
+	padding: '0 0 20px',
 	fontSize: 18,
 	fontWeight: 500,
 	display: 'flex',
