@@ -16,9 +16,16 @@ const NavLink = ({
 
 	return (
 		<Item
-			active={pathname === '/' + name.toLowerCase()}
 			//@ts-ignore
 			name={name.toLowerCase()}
+			//@ts-ignore
+			css={
+				('/' + name.toLowerCase()) === pathname ? 
+				{
+					borderTop: '4px solid $' + name.toLowerCase()
+				}
+				: null
+			}
 		>
 			<Link href={'/' + name.toLowerCase()}>
 				<a onClick={() => setActive(false)}>
