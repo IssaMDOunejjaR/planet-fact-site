@@ -32,6 +32,7 @@ export default function Content({ name }: { name: string }) {
 			<Tabs>
 				<Tab
 					active={overview === 'overview'}
+					//@ts-ignore
 					name={name.toLowerCase()}
 					onClick={() => setOverview('overview')}
 				>
@@ -40,6 +41,7 @@ export default function Content({ name }: { name: string }) {
 				<Tab
 					active={overview === 'structure'}
 					onClick={() => setOverview('structure')}
+					//@ts-ignore
 					name={name.toLowerCase()}
 				>
 					Structure
@@ -47,6 +49,7 @@ export default function Content({ name }: { name: string }) {
 				<Tab
 					active={overview === 'geology'}
 					onClick={() => setOverview('geology')}
+					//@ts-ignore
 					name={name.toLowerCase()}
 				>
 					Surface
@@ -94,6 +97,7 @@ export default function Content({ name }: { name: string }) {
 						</Group>
 						<Group>
 							<Btn
+								//@ts-ignore
 								css={
 									overview === 'overview' && {
 										background: '$' + name.toLowerCase(),
@@ -104,6 +108,7 @@ export default function Content({ name }: { name: string }) {
 								<span>01</span>Overview
 							</Btn>
 							<Btn
+								//@ts-ignore
 								css={
 									overview === 'structure' && {
 										background: '$' + name.toLowerCase(),
@@ -114,6 +119,7 @@ export default function Content({ name }: { name: string }) {
 								<span>02</span>Internal Structure
 							</Btn>
 							<Btn
+								//@ts-ignore
 								css={
 									overview === 'geology' && {
 										background: '$' + name.toLowerCase(),

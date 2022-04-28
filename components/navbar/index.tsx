@@ -10,13 +10,14 @@ const NavLink = ({
 	setActive,
 }: {
 	name: string;
-	setActive: (val: boolean) => Dispatch<SetStateAction<boolean>>;
+	setActive: Dispatch<SetStateAction<boolean>>;
 }) => {
 	const { pathname } = useRouter();
 
 	return (
 		<Item
 			active={pathname === '/' + name.toLowerCase()}
+			//@ts-ignore
 			name={name.toLowerCase()}
 		>
 			<Link href={'/' + name.toLowerCase()}>
